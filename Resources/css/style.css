@@ -1,7 +1,7 @@
 /* Vars */
 :root{
     --primary: #729f98;
-    --secondary: #283018;
+    --secondary: #6e9919;
     --accent: #aa863a;
     --light: #f0eceb;
     --dark: #333;
@@ -9,30 +9,35 @@
 /* Global Styles */
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
 }
-
+.h-text{
+    border: 2px var(--secondary) solid;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    margin-top: .5rem;
+}
+.p-text{
+    padding: 20px;
+    text-align: center;
+}
 /* Nav Bar */
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
-
-
-
 a {
 	text-decoration: none;
 }
-
-
-
 .logo {
 	margin: 0;
     font-size: 1.45em;
@@ -44,7 +49,7 @@ a {
 }
 .logo a,
 .main-nav a {
-	padding: 10px 15px;
+	padding: 5px 10px;
 	text-transform: uppercase;
 	text-align: center;
     display: block;
@@ -81,6 +86,14 @@ a {
     border-radius: 5px;
     min-height: 80px;
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  .sticky + .content {
+    padding-top: 60px;
+  }
 /* Section */
 .v-header{
     height: 100vh;
@@ -145,7 +158,197 @@ min-width: 100%;
     background: var(--accent);
     color: var(--dark);
 }
-footer{
+.scroll {
+	position: absolute;
+	bottom: 5px;
+	left: 36%;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	text-decoration: none;
+}
+/* Skills */
+#skills{
+    background-image: url(../img/bkg-diamond.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#skills .web-design, .web-apps, .apps{
+    text-align: center;
+}
+
+
+/* About Me */
+
+.button{
+    background: var(--primary);
+    color: var(--light);
+    font-size: 12px;
+    padding: 10px 5px;
+    text-decoration: none;
+}
+#about{
+    background-image: url(../img/bkg-intro2.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--light);
+}
+#about h1{
+    display: inline-block;
+    margin-left: 6rem;
+    width: 50%;
+}
+#about img{
+    display: block;
+    margin:auto;
+    width: 200px;
+    height: 200px;
+    padding: 5px 10px;
+    border-radius: 15% 50%;
+    margin-top: 2rem;
+}
+/* Portfolio */
+#portfolio{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 2rem;
+    
+}
+
+#portfolio img{
+    width: 100%;
+}
+ #portfolio h1{
+     color: #333;
+     text-align: center;
+     padding: 0;
+     margin: 0;
+     
+ }
+ #portfolio .font{
+     font-size: 40px;
+ }
+ #portfolio .overlay{
+     color: #fff;
+ }
+ #portfolio img:hover{
+     transform: scale(1.6);
+ }
+ #portfolio h6{
+     padding: 0;
+     margin: 0;
+     text-align: center;
+ }
+ #portfolio div{
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;
+     height: 40px;
+     width: 200px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ /* Overview */
+ #overview{
+     background-image: url('../img/testimonials-bkg.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+ }
+ #overview h1{
+    display: inline-block;
+    margin-left: 6rem;
+    width: 50%;
+    color: #ffffff;
+}
+#overview .box{
+    padding: 3rem 3rem;
+    text-align: center;
+    color: var(--light);
+}
+ .skills {
+    text-align: right; /* Right-align text */
+    padding-right: 20px; /* Add some right padding */
+    line-height: 40px; /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
+    color: white; /* White text color */
+}
+
+.html {width: 90%; background-color: #4CAF50;} /* Green */
+.css {width: 80%; background-color: #2196F3;} /* Blue */
+.js {width: 60%; background-color: #f44336;} /* Red */
+.php {width: 45%; background-color: #808080;} /* Dark Grey */
+/* Current */
+#current{
+    background-image: url('../img/gplaypattern.png');
+    background-size: cover;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+#current h1{
+    display: inline-block;
+    margin-left: 6rem;
+    width: 50%;
+}
+#current .box{
+    padding: 3rem 3rem;
+    text-align: center;
+    color: var(--dark);
+    text-align: center;
+}
+/* Form */
+#contact{
+    background: rgb(171, 231, 171);
+    box-sizing: border-box;
+}
+#contact h1{
+    display: inline-block;
+    margin-left: 6rem;
+    width: 50%;
+    color: #ffffff;
+}
+.myForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: .8em;
+    padding: 1.2em;
+    margin-left: 2rem;
+
+    
+  }
+  .myForm > label  {
+    grid-column: 1;
+    grid-row: auto;
+    
+  }
+  .myForm > input,
+  .myForm > button {
+    grid-column: 1;
+    grid-row: auto;
+    padding: .5em;
+    border: none;
+  }
+  .myForm textarea {
+   padding: 2rem;
+   width: 100%;
+   border: none;
+  }
+  #comment-box {
+   grid-column: 1;
+   grid-row: span 1;
+  }
+  .myForm > button {
+   grid-column: span 3; 
+  }
+  #contact .btn{
+      width: 92%;
+  }
+  /* Footer */
+  footer{
     height: 100px;
     width: 100%;
     background: var(--accent);
@@ -156,6 +359,7 @@ footer p{
     padding: 2rem;
     margin: 0;
 }
+/* Media Queries */
 @media (min-width: 700px){
     
     .btn{
@@ -239,60 +443,3 @@ footer p{
     }
 
 }
-/* About Me */
-
-.button{
-    background: var(--primary);
-    color: var(--light);
-    font-size: 12px;
-    padding: 10px 5px;
-    text-decoration: none;
-}
-
-.scroll {
-	position: absolute;
-	bottom: 5px;
-	left: 36%;
-	z-index: 2;
-	display: inline-block;
-	-webkit-transform: translate(0, -50%);
-	transform: translate(0, -50%);
-	text-decoration: none;
-}
-#skills{
-     background-image: url(../img/bkg-diamond.png);
-     background-position: center;
-     background-size: cover;
-     background-repeat: no-repeat;
-}
-#about{
-    background-image: url(../img/bkg-intro2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#portfolio{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 4rem;
-}
-
-#portfolio img{
-    width: 100%;
-}
- #portfolio h1{
-     color: #333;
-     text-align: center;
-     padding: 0;
-     margin: 0;
- }
- #portfolio .font{
-     font-size: 40px;
- }
- #portfolio .overlay{
-     color: #fff;
- }
- #portfolio img:hover{
-     transform: scale(1.6);
- }
