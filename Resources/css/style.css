@@ -62,6 +62,7 @@ a {
 .main-nav a {
 	color: var(--light);
     font-size: .99em;
+    text-align: center;
 }
 
 .main-nav a:hover {
@@ -69,7 +70,7 @@ a {
 }
 .header .main-nav li{
     display: inline-flex;
-    padding-left: 2.3rem;
+   margin-left: 1.7rem;
 }
 
 
@@ -128,7 +129,6 @@ min-width: 100%;
     width: 100%;
     background: var(--primary);
     opacity: 0.79;
-    
    
 }
 .content{
@@ -160,13 +160,14 @@ min-width: 100%;
 }
 .scroll {
 	position: absolute;
-	bottom: 5px;
-	left: 36%;
+	bottom: 1px;
+	left: 34%;
 	z-index: 2;
 	display: inline-block;
 	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
-	text-decoration: none;
+    text-decoration: none;
+    
 }
 /* Skills */
 #skills{
@@ -265,10 +266,27 @@ min-width: 100%;
     width: 50%;
     color: #ffffff;
 }
-#overview .box{
-    padding: 3rem 3rem;
+#overview .box, .box1, .box2, .box3{
+   padding: 2rem 4rem;
     text-align: center;
     color: var(--light);
+}
+.overlay2{
+    display: grid;
+    grid-template-areas: 
+      "h1"
+      "html"
+      "css"
+      "js"
+      "php";
+      padding: 1rem;
+      color: #fff;
+      height: 100%;
+width: 100%;
+background: var(--primary);
+opacity: 0.79;
+text-align: center;
+
 }
  .skills {
     text-align: right; /* Right-align text */
@@ -361,7 +379,72 @@ footer p{
 }
 /* Media Queries */
 @media (min-width: 700px){
-    
+    .scroll {
+        position: absolute;
+        bottom: 1px;
+        left: 46%;
+        z-index: 2;
+        display: inline-block;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        text-decoration: none;
+        
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        box-sizing: border-box;
+        grid-auto-rows: 1fr 1fr;
+        grid-template-areas: 
+           "h1 h1 h1 h1"
+           "text text text text"
+           "web apps apps design";
+    }
+    #skills, #about, #portfolio, #overview, #current{
+        background-attachment: fixed;
+        
+    }
+    .content{
+        position: absolute;
+        top: 20%;
+    }
+    #skills h1{
+       grid-area: h1;
+       margin: auto;
+        width: 20%;
+        color: #333;
+        display: block;
+        margin-top: 2rem;
+        
+    }
+    #skills .web-apps, .web-design, .apps{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #skills .p-text{
+        text-align: center;
+        
+    }
+    #about h1{ 
+        margin: auto;
+        width: 20%;
+        color: #fff;
+        display: block;
+    }
+    #about .p-text{
+        padding: 2rem 8rem;
+      
+    }
+    .web-design{
+        grid-area: web;
+    }
+    .p-text{
+        grid-area: text;
+       
+    }
+    #skills{
+        padding-top: 1rem;
+    }
     .btn{
         background: var(--primary);
         color: var(--light);
@@ -386,12 +469,101 @@ footer p{
         align-content: center;
         justify-content: center;
         color: var(--light);
+        position: relative;
     }
     .header .main-nav li{
         padding-left: 7.5rem;
     }
-    
-   
+    #overview h1{
+        margin: auto;
+        width: 20%;
+        color: #fff;
+        display: block;
+        grid-area: h1;
+    }
+    .overlay2{
+        display: grid;
+        grid-template-areas: 
+          "h1 h1 h1 h1"
+          "html html css css"
+          "js js php php";
+          padding: 1rem;
+          color: #fff;
+          height: 100%;
+    width: 100%;
+    background: var(--primary);
+    opacity: 0.79;
+    text-align: center;
+
+    }
+    .box{
+        grid-area: html;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+    }
+    .box1{
+        grid-area: css;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        margin-top: 2.8rem;
+    }
+    .box2{
+        grid-area: js;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        padding-left: 3rem;
+    }
+    .box3{
+        grid-area: php;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+    }
+    #contact h1{
+        margin: auto;
+        width: 20%;
+        color: #fff;
+        display: block;
+    }
+    .myForm {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        grid-auto-flow: row dense;
+        grid-gap: .8em;
+        padding: 1.2em;
+      }
+      .myForm > label  {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      .myForm > input,
+      .myForm > button {
+        grid-column: 2;
+        grid-row: auto;
+        padding: 1em;
+        border: none;
+      }
+      .myForm textarea {
+       min-height: calc(100% - 2em);
+       width: 100%;
+       border: none;
+      }
+      #comment-box {
+       grid-column: 3;
+       grid-row: span 3;
+      }
+      .myForm > button {
+       grid-column: 2 / 4; 
+      }
+   #current h1{
+    margin: auto;
+    width: 20%;
+    color: #333;
+    display: block;
+   }
 }
 @media (min-width: 769px) {
 	.header,
