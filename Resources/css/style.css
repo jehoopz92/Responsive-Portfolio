@@ -1,617 +1,749 @@
 /* Vars */
-:root{
-    --primary: #729f98;
-    --secondary: #6e9919;
-    --accent: #aa863a;
-    --light: #f0eceb;
-    --dark: #333;
+
+:root {
+  --primary: #729f98;
+  --secondary: #6e9919;
+  --accent: #aa863a;
+  --light: #f0eceb;
+  --dark: #333;
 }
+
 /* Global Styles */
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    overflow-x: hidden;
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  overflow-x: hidden;
 }
-.h-text{
-    border: 2px var(--secondary) solid;
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
-    width: 75%;
-    margin: auto;
-    text-align: center;
-    margin-top: .5rem;
+
+.h-text {
+  border: 2px var(--secondary) solid;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  margin-top: .5rem;
 }
-.p-text{
-    padding: 20px;
-    text-align: center;
+
+.p-text {
+  padding: 20px;
+  text-align: center;
 }
+
+.stars-outer{
+           position: relative;
+           display: inline-block;
+       }
+       .stars-inner{
+           position: absolute;
+           top: 0;
+           left: 0;
+           white-space: nowrap;
+           overflow: hidden;
+           width: 0;
+       }
+
+       .stars-outer::before {
+           content: "\f005 \f005 \f005 \f005 \f005";
+           font-family: 'Font Awesome 5 Free';
+           font-weight: 900;
+           color: #ccc;
+       }
+       .stars-inner::before {
+           content: "\f005 \f005 \f005 \f005 \f005";
+           font-family: 'Font Awesome 5 Free';
+           font-weight: 900;
+           color: #f8ce0b;
+       }
 /* Nav Bar */
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
+
 .logo {
-	margin: 0;
-    font-size: 1.45em;
+  margin: 0;
+  font-size: 1.45em;
 }
 
 .main-nav {
-	margin-top: 5px;
+  margin-top: 5px;
+}
 
+.logo a, .main-nav a {
+  padding: 5px 10px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  color: var(--light);
 }
-.logo a,
+
+.header .logo a {
+  border-right: 2px var(--accent) solid;
+}
+
 .main-nav a {
-	padding: 5px 10px;
-	text-transform: uppercase;
-	text-align: center;
-    display: block;
-    color: var(--light);
-}
-.header .logo a{
-    border-right: 2px var(--accent) solid;
-    
-}
-.main-nav a {
-	color: var(--light);
-    font-size: .99em;
-    text-align: center;
+  color: var(--light);
+  font-size: .99em;
+  text-align: center;
 }
 
 .main-nav a:hover {
-	color: var(--accent);
-}
-.header .main-nav li{
-    display: inline-flex;
-   margin-left: 1.7rem;
+  color: var(--accent);
 }
 
+.header .main-nav li {
+  display: inline-flex;
+  margin-left: 1.7rem;
+}
 
 .header {
-	padding-top: .5em;
-	padding-bottom: .5em;
-	border-bottom: 3px solid var(--accent);
-	background-color: var(--primary);
-	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-    border-radius: 5px;
-    min-height: 80px;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-bottom: 3px solid var(--accent);
+  background-color: var(--primary);
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  min-height: 80px;
 }
+
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
-  .sticky + .content {
-    padding-top: 60px;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
 /* Section */
-.v-header{
+
+.v-header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: var(--light);
+}
+
+.wrapper {
+  display: flex;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.fullscreen-video-wrap {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.fullscreen-video-wrap video {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: var(--primary);
+  opacity: 0.79;
+}
+
+.content {
+  z-index: 2;
+  margin-top: 9rem;
+}
+
+.content h1 {
+  font-size: 40px;
+  color: var(--dark);
+}
+
+.content p {
+  font-size: 1.5rem;
+  display: block;
+  padding-bottom: 2rem;
+  color: var(--dark);
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--light);
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 1px;
+  left: 34%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-decoration: none;
+}
+
+/* Skills */
+
+#skills {
+  background-image: url(../img/bkg-diamond.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#skills .web-design, .web-apps, .apps {
+  text-align: center;
+}
+
+/* About Me */
+
+.button {
+  background: var(--primary);
+  color: var(--light);
+  font-size: 12px;
+  padding: 10px 5px;
+  text-decoration: none;
+}
+
+#about {
+  background-image: url(../img/bkg-intro2.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--light);
+}
+
+#about h1 {
+  display: inline-block;
+  margin-left: 6rem;
+  width: 50%;
+}
+
+#about img {
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  padding: 5px 10px;
+  border-radius: 15% 50%;
+  margin-top: 2rem;
+}
+
+/* Portfolio */
+
+#portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 2rem;
+}
+
+#portfolio img {
+  width: 100%;
+}
+
+#portfolio h1 {
+  color: #333;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#portfolio .font {
+  font-size: 40px;
+}
+
+#portfolio .overlay {
+  color: #fff;
+}
+
+#portfolio img:hover {
+  transform: scale(1.6);
+}
+
+#portfolio h5 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#portfolio div {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc;
+  height: 40px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Overview */
+
+#overview {
+  background-image: url('../img/testimonials-bkg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#overview h1 {
+  display: inline-block;
+  margin-left: 6rem;
+  width: 50%;
+  color: #ffffff;
+}
+
+#overview .box, .box1, .box2, .box3 {
+  padding: 2rem 4rem;
+  text-align: center;
+  color: var(--light);
+}
+
+.overlay2 {
+  display: grid;
+  grid-template-areas: "h1" "html" "css" "js" "php";
+  padding: 1rem;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  background: var(--primary);
+  opacity: 0.79;
+  text-align: center;
+}
+
+.skills {
+  text-align: right;
+  /* Right-align text */
+  padding-right: 20px;
+  /* Add some right padding */
+  line-height: 40px;
+  /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
+  color: white;
+  /* White text color */
+}
+
+.html {
+  width: 90%;
+  background-color: #4CAF50;
+}
+
+/* Green */
+
+.css {
+  width: 80%;
+  background-color: #2196F3;
+}
+
+/* Blue */
+
+.js {
+  width: 60%;
+  background-color: #f44336;
+}
+
+/* Red */
+
+.php {
+  width: 45%;
+  background-color: #808080;
+}
+
+/* Dark Grey */
+
+/* Current */
+
+#current {
+  background-image: url('../img/gplaypattern.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#current h1 {
+  display: inline-block;
+  margin-left: 6rem;
+  width: 50%;
+}
+
+#current .box {
+  padding: 3rem 3rem;
+  text-align: center;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* Form */
+
+#contact {
+  background: rgb(171, 231, 171);
+  box-sizing: border-box;
+}
+
+#contact h1 {
+  display: inline-block;
+  margin-left: 6rem;
+  width: 50%;
+  color: #ffffff;
+}
+
+.myForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row dense;
+  grid-gap: .8em;
+  padding: 1.2em;
+  margin-left: 2rem;
+}
+
+.myForm>label {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+.myForm>input, .myForm>button {
+  grid-column: 1;
+  grid-row: auto;
+  padding: .5em;
+  border: none;
+}
+
+.myForm textarea {
+  padding: 2rem;
+  width: 100%;
+  border: none;
+}
+
+#comment-box {
+  grid-column: 1;
+  grid-row: span 1;
+}
+
+.myForm>button {
+  grid-column: span 3;
+}
+
+#contact .btn {
+  width: 92%;
+}
+
+/* Footer */
+
+footer {
+  height: 100px;
+  width: 100%;
+  background: var(--accent);
+  color: var(--light);
+}
+
+footer p {
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Media Queries */
+
+@media (min-width: 700px) {
+  .scroll {
+    position: absolute;
+    bottom: 1px;
+    left: 46%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-decoration: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    box-sizing: border-box;
+    grid-auto-rows: 1fr 1fr;
+    grid-template-areas: "h1 h1 h1 h1" "text text text text" "web apps apps design";
+  }
+  #skills, #about, #portfolio, #overview, #current, #ratings {
+    background-attachment: fixed;
+  }
+  .content {
+    position: absolute;
+    top: 20%;
+  }
+  #skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  #skills h1 {
+    grid-area: h1;
+    margin: auto;
+    width: 20%;
+    color: #333;
+    display: block;
+    margin-top: 2rem;
+  }
+  #about h1 {
+    margin: auto;
+    width: 20%;
+    color: #fff;
+    display: block;
+  }
+  #about .p-text {
+    padding: 2rem 8rem;
+  }
+  .web-design {
+    grid-area: web;
+  }
+  .p-text {
+    grid-area: text;
+  }
+  #skills {
+    padding-top: 1rem;
+  }
+  .btn {
+    background: var(--primary);
+    color: var(--light);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+  }
+  nav {
+    align-self: auto;
+  }
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+  }
+  a {
+    color: #333;
+  }
+  .v-header {
     height: 100vh;
     width: 100%;
     display: flex;
     align-content: center;
     justify-content: center;
     color: var(--light);
-}
-.container{
+    position: relative;
+  }
+  .header .main-nav li {
+    padding-left: 7.5rem;
+  }
+  #overview h1 {
+    margin: auto;
+    width: 20%;
+    color: #fff;
+    display: block;
+    grid-area: h1;
+  }
+  .overlay2 {
     display: flex;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    align-content: center;
-    
-}
-.fullscreen-video-wrap{
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-}
-
-.fullscreen-video-wrap video{
-min-height: 100%;
-min-width: 100%;
-}
-
-.overlay{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    color: #fff;
     height: 100%;
     width: 100%;
     background: var(--primary);
     opacity: 0.79;
-   
-}
-.content{
-    z-index: 2;
-    margin-top: 9rem;
-    
-}
-.content h1{
-    font-size:40px;
-    color: var(--dark);
-   
-}
-.content p{
-    font-size: 1.5rem;
+    text-align: center;
+    min-height: 700px;
+  }
+  .box {
+    grid-area: html;
+    width: 50%;
+    height: 50%;
+  }
+  .box1 {
+    grid-area: css;
+    width: 50%;
+    height: 50%;
+  }
+  .box2 {
+    grid-area: js;
+    width: 50%;
+    height: 50%;
+  }
+  .box3 {
+    grid-area: php;
+    width: 50%;
+    height: 50%;
+  }
+  #contact h1 {
+    margin: auto;
+    width: 20%;
+    color: #fff;
     display: block;
-    padding-bottom: 2rem;
-    color: var(--dark);
+  }
+  #contact {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .myForm {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: .8em;
+    padding: 1.2em;
+  }
+  .myForm>label {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .myForm>input, .myForm>button {
+    grid-column: 2;
+    grid-row: auto;
+    padding: 1em;
+    border: none;
+  }
+  .myForm textarea {
+    min-height: calc(100% - 2em);
+    width: 100%;
+    border: none;
+  }
+  #comment-box {
+    grid-column: 3;
+    grid-row: span 3;
+  }
+  .myForm>button {
+    grid-column: 2 / 4;
+  }
+  #current{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #current .box{
+    width: 30%;
+    display: inline-flex;
+    text-align: center;
+  }
+  #current h1 {
+    margin: auto;
+    width: 20%;
+    color: #333;
+    display: block;
+  }
+  #ratings h1 {
+    margin: auto;
+    width: 20%;
+    color: #333;
+  }
+  .overlay3 {
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    opacity: 0.79;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .form-group {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  #ratings h1 {
+    color: var(--light);
+  }
+  #ratings {
+    background-image: url('../img/price-bkg.jpg');
+    background-size: cover;
+    background-position: center -100px;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    z-index: 2;
+    position: relative;
+    color: var(--light);
+  }
 }
-.btn{
+
+@media (min-width: 769px) {
+  .header, .main-nav {
+    display: flex;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
     background: var(--primary);
     color: var(--light);
     font-size: 1.2rem;
     padding: 1rem 2rem;
     text-decoration: none;
-}
-.btn:hover{
-    background: var(--accent);
-    color: var(--dark);
-}
-.scroll {
-	position: absolute;
-	bottom: 1px;
-	left: 34%;
-	z-index: 2;
-	display: inline-block;
-	-webkit-transform: translate(0, -50%);
-	transform: translate(0, -50%);
-    text-decoration: none;
-    
-}
-/* Skills */
-#skills{
-    background-image: url(../img/bkg-diamond.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#skills .web-design, .web-apps, .apps{
-    text-align: center;
+  }
+  .header .main-nav li {
+    margin-right: 4rem;
+  }
 }
 
-
-/* About Me */
-
-.button{
+@media (min-width: 1200px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .v-header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: var(--light);
+  }
+  .btn {
     background: var(--primary);
     color: var(--light);
-    font-size: 12px;
-    padding: 10px 5px;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
     text-decoration: none;
-}
-#about{
-    background-image: url(../img/bkg-intro2.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: var(--light);
-}
-#about h1{
-    display: inline-block;
-    margin-left: 6rem;
-    width: 50%;
-}
-#about img{
-    display: block;
-    margin:auto;
-    width: 200px;
-    height: 200px;
-    padding: 5px 10px;
-    border-radius: 15% 50%;
-    margin-top: 2rem;
-}
-/* Portfolio */
-#portfolio{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 2rem;
-    
-}
-
-#portfolio img{
-    width: 100%;
-}
- #portfolio h1{
-     color: #333;
-     text-align: center;
-     padding: 0;
-     margin: 0;
-     
- }
- #portfolio .font{
-     font-size: 40px;
- }
- #portfolio .overlay{
-     color: #fff;
- }
- #portfolio img:hover{
-     transform: scale(1.6);
- }
- #portfolio h6{
-     padding: 0;
-     margin: 0;
-     text-align: center;
- }
- #portfolio div{
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         3px 3px 5px 6px #ccc;
-     height: 40px;
-     width: 200px;
-     margin-left: auto;
-     margin-right: auto;
- }
- /* Overview */
- #overview{
-     background-image: url('../img/testimonials-bkg.jpg');
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center center;
- }
- #overview h1{
-    display: inline-block;
-    margin-left: 6rem;
-    width: 50%;
-    color: #ffffff;
-}
-#overview .box, .box1, .box2, .box3{
-   padding: 2rem 4rem;
-    text-align: center;
-    color: var(--light);
-}
-.overlay2{
-    display: grid;
-    grid-template-areas: 
-      "h1"
-      "html"
-      "css"
-      "js"
-      "php";
-      padding: 1rem;
-      color: #fff;
-      height: 100%;
-width: 100%;
-background: var(--primary);
-opacity: 0.79;
-text-align: center;
-
-}
- .skills {
-    text-align: right; /* Right-align text */
-    padding-right: 20px; /* Add some right padding */
-    line-height: 40px; /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
-    color: white; /* White text color */
-}
-
-.html {width: 90%; background-color: #4CAF50;} /* Green */
-.css {width: 80%; background-color: #2196F3;} /* Blue */
-.js {width: 60%; background-color: #f44336;} /* Red */
-.php {width: 45%; background-color: #808080;} /* Dark Grey */
-/* Current */
-#current{
-    background-image: url('../img/gplaypattern.png');
-    background-size: cover;
-    background-position:  center center;
-    background-repeat: no-repeat;
-}
-#current h1{
-    display: inline-block;
-    margin-left: 6rem;
-    width: 50%;
-}
-#current .box{
-    padding: 3rem 3rem;
-    text-align: center;
-    color: var(--dark);
-    text-align: center;
-}
-/* Form */
-#contact{
-    background: rgb(171, 231, 171);
-    box-sizing: border-box;
-}
-#contact h1{
-    display: inline-block;
-    margin-left: 6rem;
-    width: 50%;
-    color: #ffffff;
-}
-.myForm {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: row dense;
-    grid-gap: .8em;
-    padding: 1.2em;
-    margin-left: 2rem;
-
-    
   }
-  .myForm > label  {
-    grid-column: 1;
-    grid-row: auto;
-    
+  .header .main-nav li {
+    padding: 0;
   }
-  .myForm > input,
-  .myForm > button {
-    grid-column: 1;
-    grid-row: auto;
-    padding: .5em;
-    border: none;
+  #portfolio h6 {
+    font-size: 10px;
   }
-  .myForm textarea {
-   padding: 2rem;
-   width: 100%;
-   border: none;
-  }
-  #comment-box {
-   grid-column: 1;
-   grid-row: span 1;
-  }
-  .myForm > button {
-   grid-column: span 3; 
-  }
-  #contact .btn{
-      width: 92%;
-  }
-  /* Footer */
-  footer{
-    height: 100px;
-    width: 100%;
-    background: var(--accent);
-    color: var(--light);
-}
-footer p{
-    text-align: center;
-    padding: 2rem;
-    margin: 0;
-}
-/* Media Queries */
-@media (min-width: 700px){
-    .scroll {
-        position: absolute;
-        bottom: 1px;
-        left: 46%;
-        z-index: 2;
-        display: inline-block;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-        text-decoration: none;
-        
-    }
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        box-sizing: border-box;
-        grid-auto-rows: 1fr 1fr;
-        grid-template-areas: 
-           "h1 h1 h1 h1"
-           "text text text text"
-           "web apps apps design";
-    }
-    #skills, #about, #portfolio, #overview, #current{
-        background-attachment: fixed;
-        
-    }
-    .content{
-        position: absolute;
-        top: 20%;
-    }
-    #skills h1{
-       grid-area: h1;
-       margin: auto;
-        width: 20%;
-        color: #333;
-        display: block;
-        margin-top: 2rem;
-        
-    }
-    #skills .web-apps, .web-design, .apps{
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    #skills .p-text{
-        text-align: center;
-        
-    }
-    #about h1{ 
-        margin: auto;
-        width: 20%;
-        color: #fff;
-        display: block;
-    }
-    #about .p-text{
-        padding: 2rem 8rem;
-      
-    }
-    .web-design{
-        grid-area: web;
-    }
-    .p-text{
-        grid-area: text;
-       
-    }
-    #skills{
-        padding-top: 1rem;
-    }
-    .btn{
-        background: var(--primary);
-        color: var(--light);
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        text-decoration: none;
-    }
-    nav{
-        align-self: auto;
-    }
-    nav ul li{
-        list-style: none;
-        display: inline-block;
-    }
-     a{
-        color: #333;
-    }
-    .v-header{
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        color: var(--light);
-        position: relative;
-    }
-    .header .main-nav li{
-        padding-left: 7.5rem;
-    }
-    #overview h1{
-        margin: auto;
-        width: 20%;
-        color: #fff;
-        display: block;
-        grid-area: h1;
-    }
-    .overlay2{
-        display: grid;
-        grid-template-areas: 
-          "h1 h1 h1 h1"
-          "html html css css"
-          "js js php php";
-          padding: 1rem;
-          color: #fff;
-          height: 100%;
-    width: 100%;
-    background: var(--primary);
-    opacity: 0.79;
-    text-align: center;
-
-    }
-    .box{
-        grid-area: html;
-        width: 50%;
-        height: 50%;
-        margin: 0 auto;
-    }
-    .box1{
-        grid-area: css;
-        width: 50%;
-        height: 50%;
-        margin: 0 auto;
-        margin-top: 2.8rem;
-    }
-    .box2{
-        grid-area: js;
-        width: 50%;
-        height: 50%;
-        margin: 0 auto;
-        padding-left: 3rem;
-    }
-    .box3{
-        grid-area: php;
-        width: 50%;
-        height: 50%;
-        margin: 0 auto;
-    }
-    #contact h1{
-        margin: auto;
-        width: 20%;
-        color: #fff;
-        display: block;
-    }
-    .myForm {
-        display: grid;
-        grid-template-columns: auto 1fr 1fr;
-        grid-auto-flow: row dense;
-        grid-gap: .8em;
-        padding: 1.2em;
-      }
-      .myForm > label  {
-        grid-column: 1;
-        grid-row: auto;
-      }
-      .myForm > input,
-      .myForm > button {
-        grid-column: 2;
-        grid-row: auto;
-        padding: 1em;
-        border: none;
-      }
-      .myForm textarea {
-       min-height: calc(100% - 2em);
-       width: 100%;
-       border: none;
-      }
-      #comment-box {
-       grid-column: 3;
-       grid-row: span 3;
-      }
-      .myForm > button {
-       grid-column: 2 / 4; 
-      }
-   #current h1{
-    margin: auto;
-    width: 20%;
-    color: #333;
-    display: block;
-   }
-}
-@media (min-width: 769px) {
-	.header,
-	.main-nav {
-		display: flex;
-	}
-	.header {
-		flex-direction: column;
-		align-items: center;
-    }
-    .btn{
-        background: var(--primary);
-        color: var(--light);
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        text-decoration: none;
-    }
-    .header .main-nav li{
-        margin-right: 4rem;
-    }
-	
-
-}
-
-@media (min-width: 1025px) {
-	.header {
-		flex-direction: row;
-		justify-content: space-between;
-    }
-    .v-header{
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        color: var(--light);
-    }
-   
-    
-    .btn{
-        background: var(--primary);
-        color: var(--light);
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        text-decoration: none;
-    }
-    .header .main-nav li{
-        padding: 0;
-    }
-
 }
